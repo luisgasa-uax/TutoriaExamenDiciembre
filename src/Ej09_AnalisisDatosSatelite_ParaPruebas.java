@@ -1,4 +1,4 @@
-public class Ej09_AnalisisDatosSatelite {
+public class Ej09_AnalisisDatosSatelite_ParaPruebas {
     /*
     9. **Análisis de Datos de Satélite (Array de 4 Dimensiones)**
     - **Descripción:**
@@ -14,10 +14,10 @@ public class Ej09_AnalisisDatosSatelite {
         - `void analizarDatos()`
      */
 
-    final static int X = 10;
-    final static int Y = 10;
-    final static int Z = 10;
-    final static int T = 10;
+    final static int X = 5;
+    final static int Y = 5;
+    final static int Z = 5;
+    final static int T = 5;
 
     public static void main(String[] args) {
         double[][][][] datosSatelite = new double[X][Y][Z][T];
@@ -26,15 +26,16 @@ public class Ej09_AnalisisDatosSatelite {
         analizarDatos(datosSatelite);
     }
 
-    public static void actualizarDato(double[][][][] datosSatelite, int x, int y, int z, int t, double dato) {
+    public static double[][][][] actualizarDato(double[][][][] datosSatelite, int x, int y, int z, int t, double dato) {
         datosSatelite[x][y][z][t] = dato;
+        return datosSatelite;
     }
 
     public static double obtenerDato(double[][][][] datosSatelite, int x, int y, int z, int t) {
         return datosSatelite[x][y][z][t];
     }
 
-    public static void analizarDatos(double[][][][] datosSatelite) {
+    public static double analizarDatos(double[][][][] datosSatelite) {
         double acumulado = 0;
         int cantidad = X * Y * Z * T;
         for (int i = 0; i < datosSatelite.length; i++) {
@@ -47,5 +48,6 @@ public class Ej09_AnalisisDatosSatelite {
             }
         }
         System.out.println("La media de los datos es " + acumulado + " / " + cantidad + " : " + acumulado/cantidad);
+        return acumulado/cantidad;
     }
 }
