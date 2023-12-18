@@ -1,4 +1,4 @@
-public class Ejercicio1 {
+public class Ej01GestionSatelites {
     public static void main(String[] args) {
 
         ej1GestionSatelites();
